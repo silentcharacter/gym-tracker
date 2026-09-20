@@ -1,0 +1,31 @@
+{
+  "name": "gym-tracker-functions",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "bootstrap-config": "tsx src/scripts/bootstrap-config.ts",
+    "import-history": "tsx src/scripts/import-history.ts"
+  },
+  "dependencies": {
+    "@tma.js/init-data-node": "^2.0.8",
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.0.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.13",
+    "typescript": "^5.6.0",
+    "vitest": "^5.0.1"
+  }
+}

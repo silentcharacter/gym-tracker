@@ -1,0 +1,37 @@
+:root {
+  color-scheme: dark light;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* Telegram (Bot API 6.1+) сам инжектит --tg-theme-* в :root. Вне Telegram их нет,
+     поэтому каждая переменная — с фолбэком (§9 «Тема», spec/stage-3-polish.md, решение 4). */
+  --bg: var(--tg-theme-bg-color, #17212b);
+  --card: var(--tg-theme-secondary-bg-color, #232e3c);
+  --text: var(--tg-theme-text-color, #f5f5f5);
+  --hint: var(--tg-theme-hint-color, #708499);
+  --accent: var(--tg-theme-button-color, #5288c1);
+  --accent-text: var(--tg-theme-button-text-color, #ffffff);
+  --danger: var(--tg-theme-destructive-text-color, #e05b5b);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  font: inherit;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}

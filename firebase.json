@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "public": "web/dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "/api", "function": { "functionId": "api", "region": "asia-southeast1" } },
+      { "source": "/api/**", "function": { "functionId": "api", "region": "asia-southeast1" } },
+      { "source": "**", "destination": "/index.html" }
+    ],
+    "predeploy": ["npm --prefix web run build"]
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs22",
+    "predeploy": ["npm --prefix functions run build"]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

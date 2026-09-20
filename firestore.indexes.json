@@ -1,0 +1,22 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "weightLogs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "exerciseId", "order": "ASCENDING" },
+        { "fieldPath": "date", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "weightLogs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "exerciseId", "order": "ASCENDING" },
+        { "fieldPath": "date", "order": "DESCENDING" },
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
